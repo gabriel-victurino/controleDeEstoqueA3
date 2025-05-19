@@ -1,1 +1,2 @@
-# A3 Programação de soluções computacionais
+# Sistema de controle de estoque A3
+(PROGRAMAÇÃO DE SOLUÇÕES COMPUTACIONAIS)
