@@ -2,5 +2,6 @@
 PROGRAMAÇÃO DE SOLUÇÕES COMPUTACIONAIS A3
 ----------------------------------------
 
+<strong>DESENVOLVEDORES DO PROJETO</strong>
 
 
