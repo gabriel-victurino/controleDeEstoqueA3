@@ -11,6 +11,23 @@ public class Produto extends itemEstoque{
     public Produto() {
     }
 
+    // Construtor sem quantidadeEstoque, para ser iniciado com zero no estoque.
+    
+    public Produto(String unidade, int quantidadeMinima, int quantidadeMaxima, Categoria categoria) {
+        this.unidade = unidade;
+        this.quantidadeMinima = quantidadeMinima;
+        this.quantidadeMaxima = quantidadeMaxima;
+        this.categoria = categoria;
+    }
+
+    public Produto(String unidade, int quantidadeMinima, int quantidadeMaxima, Categoria categoria, String nome, double precoUnitario) {
+        super(nome, precoUnitario);
+        this.unidade = unidade;
+        this.quantidadeMinima = quantidadeMinima;
+        this.quantidadeMaxima = quantidadeMaxima;
+        this.categoria = categoria;
+    }
+
     public String getUnidade() {
         return unidade;
     }
