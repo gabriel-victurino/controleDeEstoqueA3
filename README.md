@@ -7,6 +7,6 @@
 <br> Adhriano Machado de Oliveira - 10725114655 </br>
 <br>Ahron Stoco Simões - 10724261491 </br>
 <br>Eduardo Souza Jeremias - </br>
-<br>Gabriel Rodrigues Victurino - </br> 
+<br>Gabriel Rodrigues Victurino - 10725113959 </br> 
 <br>Gustavo Antônio de Oliveira - </br>
 
