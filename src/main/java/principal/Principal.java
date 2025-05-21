@@ -4,6 +4,6 @@ import modelo.Categoria;
 public class Principal {
 
     public static void main(String[] args) {
-        JOptionPane.showMessageDialog(null, " TOC CANSADO DE TESTAR E DAR ERRADO");
+        JOptionPane.showMessageDialog(null, "Testando a main, v0.05"); // não aguento maiss
     }
 }

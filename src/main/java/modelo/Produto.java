@@ -1,7 +1,7 @@
 package modelo;
 import modelo.Categoria;
-import modelo.itemEstoque;
-public class Produto extends itemEstoque{
+import modelo.ItemEstoque;
+public class Produto extends ItemEstoque{
     public String unidade; // Kg, Litros, etc.
     private int quantidadeEstoque;
     private int quantidadeMinima;
