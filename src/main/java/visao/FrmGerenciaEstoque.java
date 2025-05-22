@@ -6,14 +6,14 @@ package visao;
 
 /**
  *
- * @author 10725114655
+ * @author gabri
  */
-public class semnome extends javax.swing.JFrame {
+public class FrmGerenciaEstoque extends javax.swing.JFrame {
 
     /**
-     * Creates new form semnome
+     * Creates new form FrmGerenciaEstoque
      */
-    public semnome() {
+    public FrmGerenciaEstoque() {
         initComponents();
     }
 
@@ -59,20 +59,20 @@ public class semnome extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(semnome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmGerenciaEstoque.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(semnome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmGerenciaEstoque.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(semnome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmGerenciaEstoque.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(semnome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmGerenciaEstoque.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new semnome().setVisible(true);
+                new FrmGerenciaEstoque().setVisible(true);
             }
         });
     }
