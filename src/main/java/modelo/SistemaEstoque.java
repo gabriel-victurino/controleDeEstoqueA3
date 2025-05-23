@@ -1,21 +1,24 @@
 package modelo;
 import java.util.Date;
 
-public class SistemaEstoque {
+public class SistemaEstoque extends itemEstoque {
     private int id;
-    private int idProduto;
     private String operacao; // Entrada ou saida
-    private int quantidade;
+    private int quantidadeEstoque;
+    private int quantidadeMinimo;
+    private int quantidadeMaxima;
     private Date data;
+    
 
     public SistemaEstoque() {
     }
 
-    public SistemaEstoque(int id, int idProduto, String operacao, int quantidade, Date data) {
+    public SistemaEstoque(int id, String operacao, int quantidadeEstoque, int quantidadeMinimo, int quantidadeMaxima, Date data) {
         this.id = id;
-        this.idProduto = idProduto;
         this.operacao = operacao;
-        this.quantidade = quantidade;
+        this.quantidadeEstoque = quantidadeEstoque;
+        this.quantidadeMinimo = quantidadeMinimo;
+        this.quantidadeMaxima = quantidadeMaxima;
         this.data = data;
     }
 
@@ -27,14 +30,6 @@ public class SistemaEstoque {
         this.id = id;
     }
 
-    public int getIdProduto() {
-        return idProduto;
-    }
-
-    public void setIdProduto(int idProduto) {
-        this.idProduto = idProduto;
-    }
-
     public String getOperacao() {
         return operacao;
     }
@@ -43,12 +38,28 @@ public class SistemaEstoque {
         this.operacao = operacao;
     }
 
-    public int getQuantidade() {
-        return quantidade;
+    public int getQuantidadeEstoque() {
+        return quantidadeEstoque;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
+    public void setQuantidadeEstoque(int quantidadeEstoque) {
+        this.quantidadeEstoque = quantidadeEstoque;
+    }
+
+    public int getQuantidadeMinimo() {
+        return quantidadeMinimo;
+    }
+
+    public void setQuantidadeMinimo(int quantidadeMinimo) {
+        this.quantidadeMinimo = quantidadeMinimo;
+    }
+
+    public int getQuantidadeMaxima() {
+        return quantidadeMaxima;
+    }
+
+    public void setQuantidadeMaxima(int quantidadeMaxima) {
+        this.quantidadeMaxima = quantidadeMaxima;
     }
 
     public Date getData() {
@@ -58,6 +69,38 @@ public class SistemaEstoque {
     public void setData(Date data) {
         this.data = data;
     }
+    
+    // Movimentação dos produtos
+    
+    public void entrada(int quantidade){
+        this.quantidadeEstoque += quantidade;
+    }
+    
+    public void saida(int quantidade){
+        this.quantidadeEstoque -= quantidade;
+    }
+    
+    
+    // Verificação da quantidade de produtos
+    
+    public boolean abaixoDoMinimo(){
+        return quantidadeEstoque < quantidadeMinimo;
+    }
+    
+    public boolean acimaDoMaximo(){
+        return quantidadeEstoque > quantidadeMaxima;
+    }
+    
+    
+    // Valor total do produto no Estoque
+    
+    public double valorTotalEmEstoque(){
+        return super.getPrecoUnitario() * quantidadeEstoque;
+    }
+
+    
+ 
+    
     
     
 }

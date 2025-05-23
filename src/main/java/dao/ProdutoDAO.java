@@ -1,6 +1,7 @@
 package dao;
 import java.sql.*;
 import modelo.Produto;
+import modelo.SistemaEstoque;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,8 +35,10 @@ public class ProdutoDAO {
         try (Connection conn = ConnectionFactory.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             
+            SistemaEstoque se = new SistemaEstoque();
+            
             stmt.setString(1, produto.getNome());
-            stmt.setInt(2, produto.getQuantidadeMaxima());
+            stmt.setInt(2, se.getQuantidadeMaxima());
             stmt.executeUpdate();
             
         } catch (SQLException e) {

@@ -17,7 +17,7 @@ public class CategoriaDAO {
         try (Connection conn = ConnectionFactory.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             
-            stmt.setString(1, categoria.getTipo());
+            stmt.setString(1, categoria.getNome());
             stmt.setString(2, categoria.getTamanho());
             stmt.setString(3, categoria.getEmbalagem());
             stmt.executeUpdate();
@@ -33,7 +33,7 @@ public class CategoriaDAO {
         try (Connection conn = ConnectionFactory.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             
-            stmt.setString(1, categoria.getTipo());
+            stmt.setString(1, categoria.getNome());
             stmt.setString(2, categoria.getTamanho());
             stmt.setString(3, categoria.getEmbalagem());
             stmt.executeUpdate();

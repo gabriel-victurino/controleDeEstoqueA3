@@ -1,25 +1,25 @@
 package modelo;
 
 public class Categoria {
-    private String tipo; // Exemplo limpeza, enlatados, vegetais, óleos, etc...
+    private String nome; // Nome da categoria.
     private String tamanho; // Pequeno, Medio e Grande;
     private String embalagem; // Lata, Vidro e Plastico;
 
     public Categoria() {
     }
 
-    public Categoria(String tipo, String tamanho, String embalagem) {
-        this.tipo = tipo;
+    public Categoria(String nome, String tamanho, String embalagem) {
+        this.nome = nome;
         this.tamanho = tamanho;
         this.embalagem = embalagem;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getNome() {
+        return nome;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getTamanho() {
@@ -37,6 +37,10 @@ public class Categoria {
     public void setEmbalagem(String embalagem) {
         this.embalagem = embalagem;
     }
+
+    
+
+   
     
     
     
