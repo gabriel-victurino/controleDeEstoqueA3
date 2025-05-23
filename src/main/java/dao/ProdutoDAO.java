@@ -20,6 +20,7 @@ public class ProdutoDAO {
             
             stmt.setString(1, produto.getNome());
             stmt.setString(2, produto.getUnidade());
+            stmt.setDouble(3, produto.getPrecoUnitario());
             stmt.executeUpdate();
             
         } catch (SQLException e) {
