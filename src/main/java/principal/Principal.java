@@ -1,9 +1,12 @@
 package principal;
-import javax.swing.JOptionPane;
 import modelo.Categoria;
+import visao.FrmMenuPrincipal;
 public class Principal {
 
     public static void main(String[] args) {
-        JOptionPane.showMessageDialog(null, "Testando a main, v0.05"); // não aguento maiss
+     // Instancia a interface gráfica;
+    FrmMenuPrincipal objetotela = new FrmMenuPrincipal();
+    // Torna a janela visível
+    objetotela.setVisible(true);
     }
 }
