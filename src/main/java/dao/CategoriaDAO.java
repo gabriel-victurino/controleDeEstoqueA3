@@ -12,7 +12,7 @@ public class CategoriaDAO {
     }
 //seguindo o categoria.java por enquanto
     public void inserir(Categoria categoria) { 
-        String sql = "INSERT INTO produtos (tipo, tamanho, embalagem) VALUES (?,?, ?)";
+        String sql = "INSERT INTO produtos (nome, tamanho, embalagem) VALUES (?,?,?)";
         
         try (Connection conn = ConnectionFactory.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -28,7 +28,7 @@ public class CategoriaDAO {
     }
     
     public void alterar(Categoria categoria) {
-        String sql = "UPDATE produtos SET tipo = ?, tamanho = ?, embalagem = ? WHERE id = ?";
+        String sql = "UPDATE produtos SET nome = ?, tamanho = ?, embalagem = ? WHERE id = ?";
         
         try (Connection conn = ConnectionFactory.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {

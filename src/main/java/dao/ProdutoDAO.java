@@ -1,27 +1,38 @@
 package dao;
 import java.sql.*;
 import modelo.Produto;
+import modelo.Categoria;
 import modelo.SistemaEstoque;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class ProdutoDAO {
     private Connection conexao;
+    
+    SistemaEstoque se = new SistemaEstoque();
 
     public ProdutoDAO(Connection conexao) {
         this.conexao = conexao;
     }
+    
 //incompleta só pra começar, falta preço, estoque, quant minima, quant maxima e categoria (fazer Produto.java primeiro)
     public void inserir(Produto produto) { 
-        String sql = "INSERT INTO produtos (nome, unidade) VALUES (?,?)";
+        String sql = "INSERT INTO produtos (Nome, Preço Unitário, Unidade, Quantidade de Estoque, Quantidade Mínima, "
+                + "Quantidade Máxima, Id, Categoria) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         
         try (Connection conn = ConnectionFactory.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             
             stmt.setString(1, produto.getNome());
-            stmt.setString(2, produto.getUnidade());
-            stmt.setDouble(3, produto.getPrecoUnitario());
+            stmt.setDouble(2, produto.getPrecoUnitario());
+            stmt.setString(3, produto.getUnidade());
+            stmt.setInt(4, se.getQuantidadeEstoque());
+            stmt.setInt(5, se.getQuantidadeMinima());
+            stmt.setInt(6, se.getQuantidadeMaxima());
+            stmt.setInt(7, produto.getIdProduto());
+            stmt.setString(8, produto.getCategoria().getNome());
+            stmt.setString(9, produto.getCategoria().getTamanho());
+            stmt.setString(10, produto.getCategoria().getEmbalagem());
             stmt.executeUpdate();
             
         } catch (SQLException e) {
@@ -30,15 +41,18 @@ public class ProdutoDAO {
     }
     
     public void alterar(Produto produto) {
-        String sql = "UPDATE produtos SET nome = ?, unidade = ? WHERE id = ?";
+        String sql = "UPDATE produtos SET Nome = ?, Unidade = ?, Id = ?, Categoria = ? WHERE id = ?";
         
         try (Connection conn = ConnectionFactory.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             
-            SistemaEstoque se = new SistemaEstoque();
-            
             stmt.setString(1, produto.getNome());
-            stmt.setInt(2, se.getQuantidadeMaxima());
+            stmt.setString(2, produto.getUnidade());
+            stmt.setInt(3, produto.getIdProduto());
+            stmt.setString(4, produto.getCategoria().getNome());
+            stmt.setString(5, produto.getCategoria().getTamanho());
+            stmt.setString(6, produto.getCategoria().getEmbalagem());
+            stmt.setInt(7, se.getId());
             stmt.executeUpdate();
             
         } catch (SQLException e) {

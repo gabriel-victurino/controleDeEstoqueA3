@@ -5,7 +5,7 @@ public class SistemaEstoque extends itemEstoque {
     private int id;
     private String operacao; // Entrada ou saida
     private int quantidadeEstoque;
-    private int quantidadeMinimo;
+    private int quantidadeMinima;
     private int quantidadeMaxima;
     private Date data;
     
@@ -13,11 +13,11 @@ public class SistemaEstoque extends itemEstoque {
     public SistemaEstoque() {
     }
 
-    public SistemaEstoque(int id, String operacao, int quantidadeEstoque, int quantidadeMinimo, int quantidadeMaxima, Date data) {
+    public SistemaEstoque(int id, String operacao, int quantidadeEstoque, int quantidadeMinima, int quantidadeMaxima, Date data) {
         this.id = id;
         this.operacao = operacao;
         this.quantidadeEstoque = quantidadeEstoque;
-        this.quantidadeMinimo = quantidadeMinimo;
+        this.quantidadeMinima = quantidadeMinima;
         this.quantidadeMaxima = quantidadeMaxima;
         this.data = data;
     }
@@ -46,12 +46,12 @@ public class SistemaEstoque extends itemEstoque {
         this.quantidadeEstoque = quantidadeEstoque;
     }
 
-    public int getQuantidadeMinimo() {
-        return quantidadeMinimo;
+    public int getQuantidadeMinima() {
+        return quantidadeMinima;
     }
 
-    public void setQuantidadeMinimo(int quantidadeMinimo) {
-        this.quantidadeMinimo = quantidadeMinimo;
+    public void setQuantidadeMinima(int quantidadeMinima) {
+        this.quantidadeMinima = quantidadeMinima;
     }
 
     public int getQuantidadeMaxima() {
@@ -83,8 +83,8 @@ public class SistemaEstoque extends itemEstoque {
     
     // Verificação da quantidade de produtos
     
-    public boolean abaixoDoMinimo(){
-        return quantidadeEstoque < quantidadeMinimo;
+    public boolean abaixoDoMinima(){
+        return quantidadeEstoque < quantidadeMinima;
     }
     
     public boolean acimaDoMaximo(){
