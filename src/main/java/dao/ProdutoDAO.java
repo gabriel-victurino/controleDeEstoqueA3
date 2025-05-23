@@ -15,7 +15,6 @@ public class ProdutoDAO {
         this.conexao = conexao;
     }
     
-//incompleta só pra começar, falta preço, estoque, quant minima, quant maxima e categoria (fazer Produto.java primeiro)
     public void inserir(Produto produto) { 
         String sql = "INSERT INTO produtos (Nome, Preço Unitário, Unidade, Quantidade de Estoque, Quantidade Mínima, "
                 + "Quantidade Máxima, Id, Categoria) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
