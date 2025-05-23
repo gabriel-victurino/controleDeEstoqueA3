@@ -41,18 +41,23 @@ public class ProdutoDAO {
     }
     
     public void alterar(Produto produto) {
-        String sql = "UPDATE produtos SET Nome = ?, Unidade = ?, Id = ?, Categoria = ? WHERE id = ?";
+        String sql = "UPDATE produtos SET Nome = ?, Preço Unitário = ?, Unidade = ?, Quantidade de Estoque = ?, Quantidade Mínima = ?, "
+                + "Quantidade Máxima = ? Id = ?, Categoria = ? WHERE id = ?";
         
         try (Connection conn = ConnectionFactory.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             
             stmt.setString(1, produto.getNome());
-            stmt.setString(2, produto.getUnidade());
-            stmt.setInt(3, produto.getIdProduto());
-            stmt.setString(4, produto.getCategoria().getNome());
-            stmt.setString(5, produto.getCategoria().getTamanho());
-            stmt.setString(6, produto.getCategoria().getEmbalagem());
-            stmt.setInt(7, se.getId());
+            stmt.setDouble(2, produto.getPrecoUnitario());
+            stmt.setString(3, produto.getUnidade());
+            stmt.setInt(4, se.getQuantidadeEstoque());
+            stmt.setInt(5, se.getQuantidadeMinima());
+            stmt.setInt(6, se.getQuantidadeMaxima());
+            stmt.setInt(7, produto.getIdProduto());
+            stmt.setString(8, produto.getCategoria().getNome());
+            stmt.setString(9, produto.getCategoria().getTamanho());
+            stmt.setString(10, produto.getCategoria().getEmbalagem());
+            stmt.setInt(11, se.getId());
             stmt.executeUpdate();
             
         } catch (SQLException e) {
