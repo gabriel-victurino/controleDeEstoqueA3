@@ -1,10 +1,12 @@
 package principal;
-import javax.swing.JOptionPane;
 import modelo.Categoria;
+import visao.FrmMenuPrincipal;
 public class Principal {
 
     public static void main(String[] args) {
-        JOptionPane.showMessageDialog(null, "Teste de autor v0.08"); // Deu certo
-
+        // Instancia a interface gráfica
+    FrmMenuPrincipal objetotela = new FrmMenuPrincipal();
+    // Torna a janela visível
+    objetotela.setVisible(true);
     }
 }
